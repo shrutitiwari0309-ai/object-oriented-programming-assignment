@@ -1,0 +1,20 @@
+class TextEditorBuffer {
+    public static void main(String[] args) {
+        
+        // Create a StringBuffer object
+        StringBuffer buffer = new StringBuffer();
+
+        // Append text to the string
+        buffer.append("Hello");
+        buffer.append(" World");
+        System.out.println("After append: " + buffer);
+
+        // Insert text at a specific position
+        buffer.insert(5, " Java");
+        System.out.println("After insert: " + buffer);
+
+        // Reverse the final string
+        buffer.reverse();
+        System.out.println("After reverse: " + buffer);
+    }
+}
