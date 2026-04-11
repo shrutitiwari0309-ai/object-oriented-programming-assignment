@@ -1,0 +1,37 @@
+class DownloadManager implements Runnable {
+
+    String fileName;
+
+    // Constructor
+    DownloadManager(String fileName) {
+        this.fileName = fileName;
+    }
+
+    // Run method for thread
+    public void run() {
+        try {
+            System.out.println("Downloading " + fileName + "...");
+
+            // Simulate download time
+            Thread.sleep(1000);
+
+            System.out.println(fileName + " download completed");
+
+        } catch (InterruptedException e) {
+            System.out.println("Download interrupted");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Create multiple threads
+        Thread t1 = new Thread(new DownloadManager("File1"));
+        Thread t2 = new Thread(new DownloadManager("File2"));
+        Thread t3 = new Thread(new DownloadManager("File3"));
+
+        // Start threads
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
