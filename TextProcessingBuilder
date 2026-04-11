@@ -1,0 +1,23 @@
+class TextProcessingBuilder {
+    public static void main(String[] args) {
+
+        // Create a StringBuilder object with initial text
+        StringBuilder builder = new StringBuilder("Hello");
+
+        // Append additional text
+        builder.append(" World");
+        builder.append(" using StringBuilder");
+
+        // Display modified string
+        System.out.println("Modified String: " + builder);
+
+        /*
+         Comparison between StringBuilder and StringBuffer:
+
+         1. StringBuilder is NOT thread-safe, while StringBuffer is thread-safe.
+         2. StringBuilder is faster because it does not have synchronization overhead.
+         3. StringBuffer is used in multi-threaded environments where safety is needed.
+         4. StringBuilder is preferred in single-threaded scenarios for better performance.
+        */
+    }
+}
