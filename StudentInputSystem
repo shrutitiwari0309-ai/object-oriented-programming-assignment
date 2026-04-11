@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+class StudentInputSystem {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // Accept student age from user
+            System.out.print("Enter student age: ");
+            int age = sc.nextInt();
+
+            // Artificial arithmetic check (to demonstrate ArithmeticException)
+            int check = 10 / age; // if age = 0 → ArithmeticException
+
+            // Display valid age
+            System.out.println("Student age is: " + age);
+
+        } catch (InputMismatchException e) {
+            // Handles non-integer input
+            System.out.println("Invalid input");
+        } catch (ArithmeticException e) {
+            // Handles division by zero (age = 0)
+            System.out.println("Invalid input");
+        }
+
+        sc.close();
+    }
+}
